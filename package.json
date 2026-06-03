@@ -1,0 +1,75 @@
+{
+  "name": "biocolor",
+  "displayName": "Biocolor",
+  "description": "Inline coloring for biological sequences in any file — nucleotide / amino-acid auto-detect, MSA conservation shading, FASTQ Phred quality, with muted IUPAC palettes and explicit <color>…</color> overrides.",
+  "version": "0.3.0",
+  "publisher": "amkram",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amkram/biocolor.git"
+  },
+  "homepage": "https://github.com/amkram/biocolor#readme",
+  "bugs": {
+    "url": "https://github.com/amkram/biocolor/issues"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "bioinformatics",
+    "fasta",
+    "fastq",
+    "sequence",
+    "alignment",
+    "msa",
+    "dna",
+    "rna",
+    "protein",
+    "iupac",
+    "phred",
+    "conservation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "biocolor.toggle",
+        "title": "Biocolor: Toggle Coloring"
+      }
+    ],
+    "configuration": {
+      "title": "Biocolor",
+      "properties": {
+        "biocolor.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Master switch for all sequence coloring."
+        },
+        "biocolor.autoDetect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-detect and color nucleotide / amino-acid runs anywhere (not just inside <color> blocks). Non-sequence text is skipped."
+        },
+        "biocolor.conservation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Shade aligned columns by conservation: conserved columns vivid, variable columns faded."
+        },
+        "biocolor.colorTags": {
+          "type": "boolean",
+          "default": true,
+          "description": "Dim the literal <color>/</color> override tags so they recede visually."
+        }
+      }
+    }
+  }
+}

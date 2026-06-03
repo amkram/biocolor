@@ -1,0 +1,75 @@
+=============
+  Biocolor
+=============
+
+Open this file in VS Code with the extension active.
+
+----------------------------------------------------------------
+1.  Nucleotide auto-detect
+----------------------------------------------------------------
+
+Runs of 12+ nt at >=90% NT alphabet are auto-coloured:
+
+    ACGTACGTACGTACGTACGT
+    GCATGCATGCATGCATGCAT
+
+Short runs stay uncoloured:
+
+    AGGAGAGAGAA
+
+Normal text stays uncoloured.
+
+
+Runs of 12+ aa at >=90% letter purity and >=8 distinct letters:
+
+    MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQAPILS
+    GSHMLEDPVGFAEAWKAQFPDSEPPRMELRSVGDIEQE
+
+
+----------------------------------------------------------------
+2.  Explicit color blocks
+----------------------------------------------------------------
+
+Force colouring on short or ambiguous fragments by wrapping them
+in <color> ... </color> tags. 
+
+<color>ACGTT</color>
+
+
+----------------------------------------------------------------
+3.  Conservation shading
+----------------------------------------------------------------
+
+Three or more rows of the same column / length / type get a
+background highlight on conserved columns.
+
+    seq1   MKTAYIAKQRQISFVKSHFSRQLEERLGL
+    seq2   MKTAYEEKQRQISFVKSHFSRQLEERLGV
+    seq3   MKTAYEKKQRQISFVKSHFSRQLEERLGI
+    seq4   MKTAYIAKQRQISFV---FSRQLEKRLGL
+    seq5   MRTAYIAKQKQISFVKSHFSRQLEERLGL
+
+
+    hg38     ACGT--ACGTACG-ACGTACGT
+    mm10     ACGT--ACGTACGTACGT-CGT
+    rn6      ACGT--ACGTACGTACGTACGT
+    canFam   ACGT--ACTTACGTACGTACGT
+    panTro   ACGTAAACGTACG-ACGTACGT
+
+
+----------------------------------------------------------------
+4.  FASTQ data
+----------------------------------------------------------------
+
+FASTQ 4-line records are detected and colored. The quality line 
+gets green intensity scaled to Phred score; hover over any quality
+character to see Q value, error probability, and accuracy.
+
+@read1 low->high quality ramp
+ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTA
++
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHI
+@read2 mostly high quality
+GGGGCCCCAAAATTTTACGTACGTNNNNACGTACGTACGTA
++
+IIIIIIIIIIIIIIHHHHHHHGGGGGF<<<EEEEDDDDCCC

@@ -2,8 +2,8 @@
   "name": "biocolor",
   "displayName": "Biocolor",
   "description": "Inline coloring for biological sequences in any file — nucleotide / amino-acid auto-detect, MSA conservation shading, FASTQ Phred quality, with muted IUPAC palettes and explicit <color>…</color> overrides.",
-  "version": "0.3.0",
-  "publisher": "amkram",
+  "version": "0.3.1",
+  "publisher": "AlexKramer",
   "license": "MIT",
   "icon": "icon.png",
   "repository": {
@@ -44,6 +44,10 @@
       {
         "command": "biocolor.toggle",
         "title": "Biocolor: Toggle Coloring"
+      },
+      {
+        "command": "biocolor.openShowcase",
+        "title": "Biocolor: Open Showcase"
       }
     ],
     "configuration": {

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 — 2026-06-03
+
+### Added
+
+- **Biocolor: Open Showcase** command — opens the bundled `showcase.txt` in an
+  untitled editor so every feature can be tried interactively without leaving
+  VS Code. Find it in the Command Palette (Ctrl/Cmd+Shift+P → Biocolor).
+
 ## 0.3.0 — 2026-06-03
 
 First Marketplace release (renamed from `iupac-color`).

@@ -377,6 +377,17 @@ function activate(context) {
       await c.update("enabled", !c.get("enabled", true), vscode.ConfigurationTarget.Global);
       applyAll();
     }),
+    vscode.commands.registerCommand("biocolor.openShowcase", async () => {
+      const fs = require("fs");
+      const path = require("path");
+      try {
+        const content = fs.readFileSync(path.join(context.extensionPath, "showcase.txt"), "utf8");
+        const doc = await vscode.workspace.openTextDocument({ content, language: "plaintext" });
+        await vscode.window.showTextDocument(doc);
+      } catch (e) {
+        vscode.window.showErrorMessage("Biocolor: showcase.txt not found in the extension folder.");
+      }
+    }),
     vscode.languages.registerHoverProvider({ scheme: "*" }, qualHoverProvider),
   );
 }

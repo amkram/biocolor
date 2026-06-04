@@ -1,7 +1,7 @@
 {
   "name": "biocolor",
   "displayName": "Biocolor",
-  "description": "Inline coloring for biological sequences in any file — nucleotide / amino-acid auto-detect, MSA conservation shading, FASTQ Phred quality, with muted IUPAC palettes and explicit <color>…</color> overrides.",
+  "description": "Color biological sequences in any file.",
   "version": "0.3.1",
   "publisher": "AlexKramer",
   "license": "MIT",
